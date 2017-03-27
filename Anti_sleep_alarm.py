@@ -35,13 +35,13 @@ while rval:
     print "Total Keypoints without nonmaxSuppression: ", len(kp)
     img3 = cv2.drawKeypoints(frame, kp, color=(255,0,0))
     #cv2.imwrite("image1_%d.jpg"%(i),img3)
-    if abs(len(kp)-former)<300:
+    if abs(len(kp)-former)<300:                    #THIS IS THE ACCURACY FACTOR, SET IT TO SOMEWHERE BETWEEN 150-400
         #print "ARE YOU SLEEPING??"
         xcount=xcount+1
     else:
         xcount=0
     print xcount
-    if xcount==200:
+    if xcount==200:                               #THIS IS THE WAIT TIME
         pygame.mixer.music.load("alarm.wav")
         pygame.mixer.music.play()
         #os.system("shutdown now -h")
